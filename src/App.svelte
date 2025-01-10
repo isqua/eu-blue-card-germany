@@ -1,10 +1,13 @@
 <script lang="ts">
     import ProgressCalendar from './components/ProgressCalendar.svelte';
     import { calculateMonthsProgress } from './lib/progress';
+    import { calculateEndDate } from './lib/timeframes';
 
+    const startDate = new Date('2024-10-01');
+    const endDate = calculateEndDate(startDate, 21);
     const progressItems = calculateMonthsProgress(
-        new Date('2024-10-01'),
-        new Date('2026-06-30'),
+        startDate,
+        endDate,
         new Date()
     );
 </script>
