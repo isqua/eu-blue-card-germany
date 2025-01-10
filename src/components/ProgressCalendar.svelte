@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { CITIZENSHIP_MONTHS } from '../lib/constants';
+    import { generateNotes } from '../lib/notes';
     import { calculateMonthsProgress } from '../lib/progress';
     import { calculateEndDate } from '../lib/timeframes';
     import MonthProgress from './MonthProgress.svelte';
@@ -9,9 +11,13 @@
     }
 
     const { startDate, today }: Props = $props();
-    const endDate = calculateEndDate(startDate, 21);
-    const progressItems = calculateMonthsProgress(startDate, endDate, today);
-    const notes: string[] = [];
+    const citizenshipDate = calculateEndDate(startDate, CITIZENSHIP_MONTHS + 1);
+    const progressItems = calculateMonthsProgress(
+        startDate,
+        citizenshipDate,
+        today
+    );
+    const notes: string[] = generateNotes(startDate);
 </script>
 
 <ul class="list">
