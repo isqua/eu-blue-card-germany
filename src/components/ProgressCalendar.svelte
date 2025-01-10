@@ -40,13 +40,26 @@
     }
 
     .item {
-        margin: 5px;
+        padding: 4px 4px 0;
+        margin: 0;
+        border-radius: 8px;
+        break-inside: avoid;
     }
 
     .item.with-note {
-        margin: 5px 0;
-        padding: 5px;
-        border: 1px solid var(--muted-background-color);
-        border-radius: 10px;
+        margin: 4px 0 0;
+        outline: 1px solid var(--muted-background-color);
+    }
+
+    .note {
+        line-height: 24px;
+        padding: 0 4px;
+    }
+
+    @media (min-width: 720px) {
+        .list {
+            columns: auto 20rem;
+            column-gap: 10px;
+        }
     }
 </style>

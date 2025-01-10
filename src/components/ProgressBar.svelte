@@ -22,7 +22,8 @@
     .progress-container {
         width: 100%;
         background-color: var(--muted-background-color);
-        border-radius: 4px;
+        border-radius: 6px;
+        line-height: 24px;
         overflow: hidden;
         position: relative;
     }
@@ -38,8 +39,7 @@
     .progress-label {
         color: var(--text-color);
         font-weight: bold;
-        padding: 0 5px;
-        line-height: 20px;
+        padding: 0 8px;
         z-index: 1;
         position: relative;
     }
