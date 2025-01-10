@@ -3,7 +3,23 @@
     import { calculateMonthsProgress } from './lib/progress';
     import { calculateEndDate } from './lib/timeframes';
 
-    const startDate = new Date('2024-10-01');
+    function getStartDate() {
+        const params = new URLSearchParams(window.location.search);
+
+        try {
+            const start = new Date(params.get('start') ?? '');
+
+            if (!isNaN(start.getTime())) {
+                return start;
+            }
+
+            return new Date();
+        } catch (e) {
+            return new Date();
+        }
+    }
+
+    const startDate = getStartDate();
     const endDate = calculateEndDate(startDate, 21);
     const progressItems = calculateMonthsProgress(
         startDate,
