@@ -1,16 +1,20 @@
 <script lang="ts">
+    import { calculateMonthsProgress } from '../lib/progress';
+    import { calculateEndDate } from '../lib/timeframes';
     import MonthProgress from './MonthProgress.svelte';
-    import type { ProgressItem } from '../lib/progress';
 
     interface Props {
-        items: ProgressItem[];
+        startDate: Date;
+        today: Date;
     }
 
-    const { items }: Props = $props();
+    const { startDate, today }: Props = $props();
+    const endDate = calculateEndDate(startDate, 21);
+    const progressItems = calculateMonthsProgress(startDate, endDate, today);
 </script>
 
 <ul class="list">
-    {#each items as item}
+    {#each progressItems as item}
         <li class="item">
             <MonthProgress {item} />
         </li>

@@ -1,7 +1,5 @@
 <script lang="ts">
     import ProgressCalendar from './components/ProgressCalendar.svelte';
-    import { calculateMonthsProgress } from './lib/progress';
-    import { calculateEndDate } from './lib/timeframes';
 
     function getStartDate() {
         const params = new URLSearchParams(window.location.search);
@@ -20,16 +18,11 @@
     }
 
     const startDate = getStartDate();
-    const endDate = calculateEndDate(startDate, 21);
-    const progressItems = calculateMonthsProgress(
-        startDate,
-        endDate,
-        new Date()
-    );
+    const today = new Date();
 </script>
 
 <main>
-    <ProgressCalendar items={progressItems} />
+    <ProgressCalendar {startDate} {today} />
 </main>
 
 <style>
