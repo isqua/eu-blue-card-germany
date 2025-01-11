@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Header from './components/Header.svelte';
     import ProgressCalendar from './components/ProgressCalendar.svelte';
 
     function getStartDate() {
@@ -22,6 +23,7 @@
 </script>
 
 <main>
+    <Header />
     <ProgressCalendar {startDate} {today} />
 </main>
 
