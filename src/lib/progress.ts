@@ -22,10 +22,7 @@ export function calculateMonthsProgress(
 
         let value = 0;
 
-        if (
-            currentDate.getFullYear() < today.getFullYear() ||
-            currentDate.getMonth() < today.getMonth()
-        ) {
+        if (currentDate < today) {
             value = daysInMonth;
         }
 
