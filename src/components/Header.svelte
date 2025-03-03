@@ -1,6 +1,6 @@
 <header>
-    <h1>Plan your Germany integration in advance</h1>
-    <p>The dates in the calendar are indicated for Blue Card holders</p>
+    <h1>Plan your 🇩🇪 Germany integration in advance</h1>
+    <p>The dates in the calendar are indicated for 🇪🇺 Blue Card holders</p>
 </header>
 
 <style>
