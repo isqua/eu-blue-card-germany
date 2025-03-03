@@ -8,9 +8,11 @@
     }
 
     const { item }: Props = $props();
-    const name = new Date(item.year, item.month, 1).toLocaleString('default', {
-        month: 'long',
-    });
+    const name = $derived(
+        new Date(item.year, item.month, 1).toLocaleString('default', {
+            month: 'long',
+        })
+    );
 </script>
 
 <ProgressBar max={item.max} value={item.value}>{item.year} {name}</ProgressBar>

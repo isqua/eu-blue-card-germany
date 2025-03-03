@@ -1,29 +1,23 @@
 <script lang="ts">
+    import DateForm from './components/DateForm.svelte';
     import Header from './components/Header.svelte';
     import ProgressCalendar from './components/ProgressCalendar.svelte';
 
-    function getStartDate() {
-        const params = new URLSearchParams(window.location.search);
-
-        try {
-            const start = new Date(params.get('start') ?? '');
-
-            if (!isNaN(start.getTime())) {
-                return start;
-            }
-
-            return new Date();
-        } catch (e) {
-            return new Date();
-        }
-    }
-
-    const startDate = getStartDate();
     const today = new Date();
+    const initialDate = today;
+
+    let selectedYear = $state(initialDate.getFullYear());
+    let selectedMonth = $state(initialDate.getMonth());
+    const startDate = $derived(new Date(selectedYear, selectedMonth, 1));
 </script>
 
 <main>
     <Header />
+    <DateForm
+        bind:selectedYear
+        bind:selectedMonth
+        lastAvailableYear={today.getFullYear()}
+    />
     <ProgressCalendar {startDate} {today} />
 </main>
 

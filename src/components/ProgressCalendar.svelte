@@ -11,13 +11,13 @@
     }
 
     const { startDate, today }: Props = $props();
-    const citizenshipDate = calculateEndDate(startDate, CITIZENSHIP_MONTHS + 1);
-    const progressItems = calculateMonthsProgress(
-        startDate,
-        citizenshipDate,
-        today
+    const citizenshipDate = $derived(
+        calculateEndDate(startDate, CITIZENSHIP_MONTHS + 1)
     );
-    const notes: string[] = generateNotes(startDate);
+    const progressItems = $derived(
+        calculateMonthsProgress(startDate, citizenshipDate, today)
+    );
+    const notes: string[] = $derived(generateNotes(startDate));
 </script>
 
 <ul class="list">

@@ -8,7 +8,7 @@
     }
 
     const { value = 0, max = 30, children }: Props = $props();
-    const percentage = Math.round((value / max) * 100);
+    const percentage = $derived(Math.round((value / max) * 100));
 </script>
 
 <div class="progress-container">
