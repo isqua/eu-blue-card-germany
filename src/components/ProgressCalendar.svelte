@@ -25,9 +25,11 @@
         {@const note = notes[index]}
         <li class="item" class:with-note={Boolean(note)}>
             <MonthProgress {item} />
-            <div class="note">
-                {note}
-            </div>
+            {#if note}
+                <div class="note">
+                    {note}
+                </div>
+            {/if}
         </li>
     {/each}
 </ul>
@@ -40,26 +42,32 @@
     }
 
     .item {
-        padding: 4px 4px 0;
-        margin: 0;
+        padding: 0;
+        margin: 0 0 4px;
+        box-sizing: border-box;
         border-radius: 8px;
         break-inside: avoid;
     }
 
     .item.with-note {
-        margin: 4px 0 0;
-        outline: 1px solid var(--muted-background-color);
+        border: 1px solid var(--muted-background-color);
+        border-top-width: 0px;
     }
 
     .note {
-        line-height: 24px;
-        padding: 0 4px;
+        line-height: 20px;
+        padding: 0px 8px;
     }
 
     @media (min-width: 720px) {
         .list {
             columns: auto 20rem;
             column-gap: 10px;
+        }
+
+        .note {
+            line-height: 28px;
+            margin-top: -1px;
         }
     }
 </style>
