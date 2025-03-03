@@ -1,5 +1,6 @@
 <script lang="ts">
     import DateForm from './components/DateForm.svelte';
+    import Footer from './components/Footer.svelte';
     import Header from './components/Header.svelte';
     import ProgressCalendar from './components/ProgressCalendar.svelte';
     import { StorageKeys } from './lib/constants';
@@ -30,6 +31,7 @@
         lastAvailableYear={today.getFullYear()}
     />
     <ProgressCalendar {startDate} {today} />
+    <Footer />
 </main>
 
 <style>
