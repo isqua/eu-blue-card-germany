@@ -23,7 +23,9 @@
 </script>
 
 <form>
-    <p><b>What date did you start working as a Blue Card holder?</b></p>
+    <p>
+        <b>What date did you start working in Germany as a Blue Card holder?</b>
+    </p>
     <label for="year">Year:</label>
     <select id="year" bind:value={selectedYear}>
         {#each years as year}
