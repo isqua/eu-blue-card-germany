@@ -2,13 +2,24 @@
     import DateForm from './components/DateForm.svelte';
     import Header from './components/Header.svelte';
     import ProgressCalendar from './components/ProgressCalendar.svelte';
+    import { StorageKeys } from './lib/constants';
+    import { deserializeDate, serializeDate } from './lib/storage';
+
+    function getInitialDate() {
+        const storedDate = localStorage.getItem(StorageKeys.arrivalDate);
+        return deserializeDate(storedDate) ?? new Date();
+    }
 
     const today = new Date();
-    const initialDate = today;
+    const initialDate = getInitialDate();
 
     let selectedYear = $state(initialDate.getFullYear());
     let selectedMonth = $state(initialDate.getMonth());
     const startDate = $derived(new Date(selectedYear, selectedMonth, 1));
+
+    $effect(() => {
+        localStorage.setItem(StorageKeys.arrivalDate, serializeDate(startDate));
+    });
 </script>
 
 <main>

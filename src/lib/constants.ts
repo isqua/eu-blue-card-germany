@@ -1,3 +1,7 @@
+export enum StorageKeys {
+    arrivalDate = 'arrivalDate',
+}
+
 export const CITIZENSHIP_MONTHS = 36;
 
 export const PERMANENT_RESIDENCE_A1 = 27;
