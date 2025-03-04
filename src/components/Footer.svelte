@@ -24,6 +24,12 @@
                 </span>
             </a>
         </li>
+        <li>
+            <a href="https://www.gesetze-im-internet.de/aufenthg_2004/__9.html">
+                §9 General requirements for a Permanent Residence Permit /
+                <span lang="de"> §9 Niederlassungserlaubnis </span>
+            </a>
+        </li>
     </ul>
 </footer>
 
