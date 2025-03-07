@@ -1,61 +1,46 @@
+<script lang="ts">
+    function getCommitDate() {
+        const date = import.meta.env.VITE_BUILD_DATE ?? '';
+
+        if (date) {
+            return new Date(date).toLocaleDateString();
+        }
+    }
+
+    const commitUrl = import.meta.env.VITE_COMMIT_URL ?? '#';
+    const commitDate = getCommitDate();
+</script>
+
 <footer>
-    <h3>
-        Source: <span lang="de">
-            Gesetz über den Aufenthalt, die Erwerbstätigkeit und die Integration
-            von Ausländern im Bundesgebiet 1) (Aufenthaltsgesetz - AufenthG)
-        </span>
-    </h3>
-    <ul>
-        <li>
-            <a
-                href="https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html"
-            >
-                §18g How to get a Blue Card /
-                <span lang="de"> §18g Blaue Karte EU </span>
-            </a>
-        </li>
-        <li>
-            <a
-                href="https://www.gesetze-im-internet.de/aufenthg_2004/__18c.html"
-            >
-                §18c How to get a Permanent Residence Permit /
-                <span lang="de">
-                    §18c Niederlassungserlaubnis für Fachkräfte
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.gesetze-im-internet.de/aufenthg_2004/__9.html">
-                §9 General requirements for a Permanent Residence Permit /
-                <span lang="de"> §9 Niederlassungserlaubnis </span>
-            </a>
-        </li>
-    </ul>
+    <p class="copyright">
+        <span>©</span>
+        <a href="https://isqua.ru/en/projects" target="_blank">isqua</a>. Last
+        updated
+        <a href={commitUrl} target="_blank" rel="noopener noreferrer">
+            {commitDate}
+        </a>
+    </p>
 </footer>
 
 <style>
     footer {
-        margin-top: 1rem;
+        color: #999;
     }
 
-    h3 {
-        font-size: 1rem;
-        line-height: 1;
-        margin: 0 0 0.25rem;
+    .copyright span {
+        display: inline-block;
+        transition: transform 0.2s ease;
     }
 
-    ul {
-        list-style-type: disc;
-        margin: 0;
-        padding: 0 0 0 1rem;
+    .copyright:hover span {
+        transform: scaleX(-1);
+        color: #d04000;
     }
 
-    a {
-        color: #0070f3;
-        text-decoration: none;
-    }
-
+    a,
     a:visited {
-        color: #9600f3;
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid #dddddd;
     }
 </style>

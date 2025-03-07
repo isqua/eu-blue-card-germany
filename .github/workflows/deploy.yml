@@ -25,10 +25,15 @@ jobs:
             - name: setup pages
               id: pages
               uses: actions/configure-pages@v3
+            - name: get build date
+              id: date
+              run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
             - name: build app
               run: npm run build
               env:
                   BASE_PATH: ${{ steps.pages.outputs.base_path }}
+                  VITE_COMMIT_URL: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
+                  VITE_BUILD_DATE: ${{ steps.date.outputs.date }}
             - name: upload artifact
               uses: actions/upload-pages-artifact@v3
               with:

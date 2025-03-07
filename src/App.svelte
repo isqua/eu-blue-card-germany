@@ -3,6 +3,7 @@
     import Footer from './components/Footer.svelte';
     import Header from './components/Header.svelte';
     import ProgressCalendar from './components/ProgressCalendar.svelte';
+    import Sources from './components/Sources.svelte';
     import { StorageKeys } from './lib/constants';
     import { deserializeDate, serializeDate } from './lib/storage';
 
@@ -31,6 +32,7 @@
         lastAvailableYear={today.getFullYear()}
     />
     <ProgressCalendar {startDate} {today} />
+    <Sources />
     <Footer />
 </main>
 
