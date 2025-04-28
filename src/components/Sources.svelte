@@ -8,6 +8,7 @@
     <ul>
         <li>
             <a
+                target="_blank"
                 href="https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html"
             >
                 §18g How to get a Blue Card /
@@ -16,6 +17,7 @@
         </li>
         <li>
             <a
+                target="_blank"
                 href="https://www.gesetze-im-internet.de/aufenthg_2004/__18c.html"
             >
                 §18c How to get a Permanent Residence Permit /
@@ -25,7 +27,10 @@
             </a>
         </li>
         <li>
-            <a href="https://www.gesetze-im-internet.de/aufenthg_2004/__9.html">
+            <a
+                target="_blank"
+                href="https://www.gesetze-im-internet.de/aufenthg_2004/__9.html"
+            >
                 §9 General requirements for a Permanent Residence Permit /
                 <span lang="de"> §9 Niederlassungserlaubnis </span>
             </a>
