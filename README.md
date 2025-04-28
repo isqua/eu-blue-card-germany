@@ -1,3 +1,5 @@
-# deutscher-timer
+# EU Blue Card in Germany
 
-Hello world
+Planning to integrate into 🇩🇪 Germany with the 🇪🇺 EU Blue Card?
+
+→ [Check out this planner](https://isqua.github.io/eu-blue-card-germany/) ←
